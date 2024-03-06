@@ -17,10 +17,8 @@ class Solution {
         int index = Math.min(index1, index2);
         
         if(str_list[index].equals("r")){
-            if(index == str_list.length-1) return a;
             return Arrays.copyOfRange(str_list, index+1, str_list.length);
         }else{
-            if(index == 0) return a;
             return Arrays.copyOfRange(str_list, 0, index);
         }
     }
