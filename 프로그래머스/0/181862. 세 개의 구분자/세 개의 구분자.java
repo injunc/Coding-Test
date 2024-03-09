@@ -3,10 +3,7 @@ import java.util.*;
 class Solution {
     public String[] solution(String myStr) {
         
-        myStr = myStr.replaceAll("a", " ");
-        myStr = myStr.replaceAll("b", " ");
-        myStr = myStr.replaceAll("c", " ");
-
+        myStr = myStr.replaceAll("[abc]", " ");
         
         List<String>list = new ArrayList<>();
         
