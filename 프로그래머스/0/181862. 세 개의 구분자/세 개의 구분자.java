@@ -11,12 +11,7 @@ class Solution {
             if(s.length() > 0) list.add(s);
         }
         
-        String[] answer = new String[list.size()];
-        for(int i=0; i<answer.length; i++){
-            answer[i] = list.get(i);
-        }
-        
-        return (list.size()>0) ? answer : new String[] {"EMPTY"};
+        return (list.size()>0) ?   list.stream().toArray(String[]::new)   : new String[] {"EMPTY"};
         
     }
 }
