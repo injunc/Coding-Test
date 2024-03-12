@@ -22,6 +22,10 @@ class Solution {
         };
         
         Arrays.sort(player, cp);
+        
+        for(int[] arr : player){
+            System.out.println(arr[0] + ":" +arr[1] +" : "+ arr[2] );
+        }
 
         return player[player.length-1][2]*10000 +  
             player[player.length-2][2]*100 +  player[player.length-3][2];
