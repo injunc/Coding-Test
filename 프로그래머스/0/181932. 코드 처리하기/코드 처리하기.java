@@ -1,6 +1,6 @@
 class Solution {
     public String solution(String code) {
-        String answer = "";
+        StringBuilder answer = new StringBuilder();
         
         boolean mode = false;
         
@@ -11,13 +11,13 @@ class Solution {
             else{
                 if(i%2==0 && !mode){
                 // 짝수일때 mode가 0이면 추가 
-                    answer+= code.charAt(i);
+                    answer.append(code.charAt(i));
                 }else if(i%2!=0 && mode){
                 // 홀수일때 mode가 1이면 추가  
-                    answer+= code.charAt(i);
+                    answer.append(code.charAt(i));
                 }
             }
         }
-        return answer.length()>1?answer:"EMPTY";
+        return answer.length()>1?answer.toString():"EMPTY";
     }
 }
