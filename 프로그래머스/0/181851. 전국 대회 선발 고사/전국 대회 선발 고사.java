@@ -17,7 +17,6 @@ class Solution {
                 if(a2[1] == 0) return -1;
                 if(a1[1] == 0) return 1;
                 
-                
                 return a1[0] - a2[0];
             }
         };
