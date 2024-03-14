@@ -1,32 +1,62 @@
-import java.util.*;
-
 class Solution {
     public int solution(String s) {
-        StringBuilder answer = new StringBuilder();
-        StringBuilder str = new StringBuilder();
-        
-        // 매핑 배열 생성
-        List<String> nums = new ArrayList<>(Arrays.asList( 
-            "zero", "one", "two", "three",
-            "four", "five", "six", "seven",
-            "eight", "nine"));
-        
-        // 문자열 순회
-        for(char c : s.toCharArray()){  
-            // 숫자는 그냥 추가
-            if(c <= '9'){
-                answer.append(c);
-            }else{
-                // 문자 하나씩 연결
-                str.append(c);
-                
-                // 문자열이 숫자랑 매핑이 되는지 확인
-                int n = nums.indexOf(str.toString());
-                if(n == -1) continue;
-                answer.append(n+"");
-                str.setLength(0);
+        String answer = "";
+
+       int index =0;
+        while (index < s.length()) {
+            System.out.println(index);
+            char caseVar = s.charAt(index);
+
+            switch (caseVar) {
+            case 'z':
+                index += 4;
+                answer += "0";
+                break;
+            case 'o':
+                index += 3;
+                answer += "1";
+                break;
+            case 'e':
+                index += 5;
+                answer += "8";
+                break;
+            case 'n':
+                index += 4;
+                answer += "9";
+                break;
+            case 't':
+                if (s.charAt(index + 1) == 'w') {
+                    index += 3;
+                    answer += "2";
+                } else {
+                    index += 5;
+                    answer += "3";
+                }
+                break;
+            case 'f':
+                if (s.charAt(index + 1) == 'o') {
+                    index += 4;
+                    answer += "4";
+                } else {
+                    index += 4;
+                    answer += "5";
+                }
+                break;
+            case 's':
+                if (s.charAt(index + 1) == 'i') {
+                    index += 3;
+                    answer += "6";
+                } else {
+                    index += 5;
+                    answer += "7";
+                }
+                break;
+            default:
+                answer+=s.substring(index,index+1);
+                index+=1;
+                break;
             }
         }
-        return Integer.parseInt(answer.toString());
-        }
+        return Integer.parseInt(answer);
     }
+}
