@@ -1,6 +1,6 @@
 class Solution {
     public String solution(String s) {
-        String answer = "";
+        StringBuilder answer = new StringBuilder();
         
         s = s.toLowerCase();
         int index =0;
@@ -9,17 +9,15 @@ class Solution {
             char c = s.charAt(i);
             
             if(c ==' '){
-                answer += " ";
+                answer.append(" ");
                 index = 0;
             }
             else{
-                if(index%2==0) answer += (char)(c-32);
-                else answer += c;
-                index++;
+                if(index++%2==0) answer.append((char)(c-32));
+                else answer.append(c);
                 }
-
             }
         
-        return answer;
+        return answer.toString();
     }
 }
