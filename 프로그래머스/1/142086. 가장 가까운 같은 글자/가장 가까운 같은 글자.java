@@ -8,16 +8,13 @@ class Solution {
         //  문자열 순회
         for(int i=0; i<s.length(); i++){
             char c = s.charAt(i);
+            
             if(!map.containsKey(c)){
-                map.put(c, i);
                 answer[i] =-1;
-            }
-            // 맵에서 전에 거리가 있다면 인덱스-전거리
-            // 맵에 인덱스 업데이트
-            else{
+            }else{
                 answer[i] =i - map.get(c);
-                map.put(c, i);
             }
+            map.put(c, i);
         }
         return answer;
     }
