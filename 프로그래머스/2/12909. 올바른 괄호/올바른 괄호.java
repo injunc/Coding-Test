@@ -1,5 +1,7 @@
 class Solution {
     boolean solution(String s) {
+        
+        
         int sequence =0;
         
         // ( 은 1   ) 은 -1
