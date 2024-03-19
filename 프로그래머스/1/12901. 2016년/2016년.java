@@ -1,17 +1,21 @@
 class Solution {
     public String solution(int a, int b) {
-        String answer = "";
-        String[] day  ={"FRI", "SAT", "SUN", "MON", "TUE" , "WED", "THU"};
-        int[] days = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        int[] year = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31, 30};
+        String[] day = {"FRI","SAT","SUN","MON","TUE","WED","THU"};     
         
-        int d = b-1;
-        // 1 + 해당 월까지 일수 + 당월 일수 
-        for(int i=0; i<a-1; i++){
-            d+= days[i];
+        int today =0;
+        
+        // +7 그대로
+        for(int i =0; i< a-1; i++){
+            today += year[i];
         }
-        // %7 해서 요일 배열과 매칭        
-        d = d%7;
-    
-        return day[d];
+        today += b-1;
+        
+        today %=7;
+        
+        
+        return day[today];
+        // a-1 추가
+        // b 추가
     }
 }
