@@ -16,12 +16,11 @@ class Solution {
     
     public boolean odd(int n){
         if(n%2 ==0) return false;
+        
         int count =0;
         
         for(int i =1; i<= Math.sqrt(n); i++){
-            if(n%i ==0){
-                count += Math.sqrt(n) == n/i?1:2;
-            }
+            if(n%i ==0) count += Math.sqrt(n) == n/i?1:2;
             if(count > 2) return false;
         }
         return true;
