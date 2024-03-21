@@ -7,12 +7,13 @@ class Solution {
         // number 순회
         for(int i=1; i<= number; i++){
             // 약수 배열 반환
-            answer += lit(i, limit, power);
+            int n = lit(i);
+            answer += n>limit?power:n;
         }
         return answer;
 }
     
-    public int lit(int n,int limit, int power){
+    public int lit(int n){
         if(n== 1) return 1;
         
         Set<Integer> set = new HashSet<>();
@@ -22,6 +23,6 @@ class Solution {
                 set.add(n/i);
             }
         }
-        return set.size()>limit?power:set.size();
+        return set.size();
     }
 }
