@@ -12,10 +12,7 @@ class Solution {
             if(s.indexOf("mama") != -1) continue;
 
             // 문자 교체해서 제거
-            s =s.replaceAll("aya", "@");
-            s =s.replaceAll("ye", "@");
-            s =s.replaceAll("woo", "@");
-            s =s.replaceAll("ma", "@");
+            s =s.replaceAll("aya|ye|woo|ma", "@");
             s =s.replaceAll("@", "");
             
             if(s.equals("")) answer++;
